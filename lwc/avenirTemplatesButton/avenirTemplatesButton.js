@@ -68,6 +68,8 @@ export default class LwcPicklistWithoutRecordtype extends LightningElement {
     }
 
     handleChange(event){
+        this.template.querySelector('lightning-datatable').selectedRows = [];
+        this.selectedRows = [];
         this.currentLanguage = event.detail.value;
     }
 
