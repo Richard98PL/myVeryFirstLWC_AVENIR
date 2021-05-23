@@ -24,7 +24,7 @@ public with sharing class avenirTemplatesButtonController {
                 }
             }
             System.debug(matchedTemplates);
-            return [SELECT Id,Name,ave__Document_Name__c
+            return [SELECT Id,Name,ave__Document_Name__c, LastModifiedDate
                     FROM ave__Template_Configuration__c 
                     WHERE 
                         (Language__c = :language AND

@@ -8,11 +8,11 @@ import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import TEMPLATE_OBJECT from '@salesforce/schema/ave__Template_Configuration__c'
 
 const columns = [
-    { label: '', 
+    { label: 'Type', 
         fieldName: 'clientUrl', 
         type: 'button', 
         sortable: false, 
-        fixedWidth: 35,
+        fixedWidth: 50,
         cellAttributes: { alignment: 'center'},
         typeAttributes: {
             label : '',
@@ -23,7 +23,15 @@ const columns = [
             variant : 'base'
         }
     },
-    { label: 'Document Name', fieldName: 'ave__Document_Name__c', type: 'text', hideDefaultActions: true },
+    { label: 'Document Name', fieldName: 'ave__Document_Name__c', type: 'text', hideDefaultActions: true, wrapText: true},
+    { label: 'Configuration Date', fieldName: 'LastModifiedDate', type: "date", hideDefaultActions: true, initialWidth: 200, typeAttributes:{
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    }},
 ];
 
 export default class LwcPicklistWithoutRecordtype extends LightningElement {
